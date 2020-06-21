@@ -38,7 +38,7 @@ func getArgs() map[string]string{
 			myMap[args[i]] = args[i+1]
 		}
 	}
-	ok, _ := regexp.MatchString("\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w:\\w\\w", myMap["-m"])
+	ok, _ := regexp.MatchString("^([0-9A-F]{2}[:-]){5}([0-9A-F]{2})$", myMap["-m"])
 	if !ok{
 		log.Fatal("The Mac address is not true !!!! ")
 	}
